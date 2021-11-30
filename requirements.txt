@@ -1,0 +1,10 @@
+jupyterlab
+pandas
+numpy
+openpyxl
+xlrd
+matplotlib
+seaborn
+selenium
+streamlit
+plotly
