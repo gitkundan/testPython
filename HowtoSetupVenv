@@ -1,3 +1,7 @@
 # Create a virtual environment in pwd
 # (1) python -m venv .venv
-# (2) source Scripts/activate
+# (2) cd .venv
+# (3) source Scripts/activate
+# (4) cd ..
+# (5) pip install -r requirements.txt
+
