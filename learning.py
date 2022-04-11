@@ -62,6 +62,7 @@ option (1) - attributes in init constructor
 define all attributes in one go while intial creation of object
 
 class Employee:
+    "Document class here"
     def __init__(self,name,salary=1000):
         self.name=name
         self.salary=salary
@@ -69,7 +70,38 @@ class Employee:
 #All attributes will now get created when you create the object
 John = Employee('John',10000)
 
-Convention : classes in CamelCase starting with Capitals
-methods and attributes : lower_snake_case
+Convention : classes in CamelCase starting with Capitals (not javascript) e.g. MyClass
+methods and attributes : lower_snake_case e.g. my_method
+
+---------------------------------
+Example of classes:
+from math import sqrt
+
+class Point:
+    ""Defines point in space given x and y""
+
+    def __init__(self, x=0.0, y=0.0):
+        self.x = x
+        self.y = y
+
+    def distance_to_origin(self):
+        ""returns distance from point to origin""
+        return sqrt(self.x**2 + self.y**2)
+
+    def reflect(self, axis):
+        ""shows the x inverse or y inverse co-ordinate of the point""
+        if axis == "x":
+            self.y = -self.y
+        elif axis == "y":
+            self.x = -self.x
+        else:
+            print("The argument axis only accepts values x and y")
+
+sample=Point(1.1,2.3)
+sample.reflect("y")
+print((sample.x,sample.y))
+print(sample.distance_to_origin())
+---------------------------------
+
 
 """
