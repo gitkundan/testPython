@@ -1,4 +1,16 @@
 """
+Read Later:
+https://youtu.be/CApCQKuWqBM (30 days python)
+Rest API (Caleb) https://youtu.be/qbLc5a9jdXo
+
+OOO ETL :
+https://github.com/mk-hasan/ETL-Python-OOP/blob/main/etl.py
+https://gist.github.com/DFoly/9943107fa1b5a504fa6cd8ae5ebfa824#file-part9_twitter-py
+https://hevodata.com/learn/setting-up-etl-using-python-simplified/
+
+=======================================================================
+
+
 1) string formatting : 
 age = 34
 print(f"You are {age}")
