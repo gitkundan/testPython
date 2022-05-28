@@ -1,26 +1,18 @@
-from math import sqrt
+# Program to parse JSON data in Python using jsonpath
+# https://codecary.com/python-jsonpath-examples/
+# https://jsonpath.com/
+# https://github.com/h2non/jsonpath-ng >>download UI locally
+# https://goessner.net/articles/JsonPath/index.html#e2
 
-class Point:
-    """Defines point in space given x and y"""
+import json
+from jsonpath_ng import jsonpath, parse
 
-    def __init__(self, x=0.0, y=0.0):
-        self.x = x
-        self.y = y
+with open("response_weather.json", 'r') as json_file:
+    json_data = json.load(json_file)
 
-    def distance_to_origin(self):
-        """returns distance from point to origin"""
-        return sqrt(self.x**2 + self.y**2)
+dt_expression = parse('$..list[*]["dt"]')
 
-    def reflect(self, axis):
-        """shows the x inverse or y inverse co-ordinate of the point"""
-        if axis == "x":
-            self.y = -self.y
-        elif axis == "y":
-            self.x = -self.x
-        else:
-            print("The argument axis only accepts values x and y")
-
-sample=Point(1.1,2.3)
-sample.reflect("y")
-print((sample.x,sample.y))
-print(sample.distance_to_origin())
+final={}
+for match in dt_expression.find(json_data):
+    final["date"]=match.value
+print(final)

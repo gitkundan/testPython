@@ -15,3 +15,5 @@ altair
 bokeh
 vega
 requests
+pyreadline3
+jsonpath-ng
