@@ -39,4 +39,10 @@ setter: set property value using a method. setter will not have return values, t
 better alternative is to get all properties and default them to some value in __init__ (constructor, dundee - gets called each time class is initiliazed), so arguments can be passed during class intialization. 
 @classmethod before methods that are class wide and not for instance but for the whole class. Global variable inside class ==> useful for alternative constructor
 
+#file reads
+filename="C:/Users/Dell/Downloads/PPR-2022-01-Meath(1).csv"
+
+with open(filename,'r') as f:
+    lines=f.readlines()
+    print(lines)
 
