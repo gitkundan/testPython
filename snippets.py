@@ -98,3 +98,15 @@ with open(path, mode="r", encoding="windows-1252") as reader_csv_file:
 	        writer.writerow(row)
 
             
+#dictionary iterations
+students=[]
+Peter=[{"name": "Peter", "gender": "Male", "age": 20}]
+Mary=[{"name": "Mary", "gender": "Female", "age": 30}]
+students=Peter+Mary
+pprint(students)
+
+
+my_dict = {1: 'blue', 2: 'green', 3: 'red', 4: 'yellow', 5: 'orange'}
+new={}
+for k,v in my_dict.items():
+    new[k]=v
