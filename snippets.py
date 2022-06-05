@@ -22,7 +22,16 @@ https://stackoverflow.com/questions/48203912/how-to-run-the-sequence-of-python-s
 
   #API pagination
   https://stackoverflow.com/questions/17777845/python-requests-arguments-dealing-with-api-pagination
-    
+async version of requests : https://github.com/ross/requests-futures
+		
+#Generic REST API consumer
+https://codereview.stackexchange.com/questions/8455/a-generic-rest-api-consuming-python-library
+
+#Test API for query:
+https://www.appsloveworld.com/free-online-sample-rest-api-url-for-testing/
+	
+	
+	
  #filtering
 https://datagy.io/python-filter/
   
