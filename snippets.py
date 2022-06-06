@@ -110,3 +110,13 @@ my_dict = {1: 'blue', 2: 'green', 3: 'red', 4: 'yellow', 5: 'orange'}
 new={}
 for k,v in my_dict.items():
     new[k]=v
+
+#ETL Framework:
+a) ETL framework : pygrametl (https://chrthomsen.github.io/pygrametl/doc/quickstart/install.html, https://www.integrate.io/blog/building-an-etl-pipeline-in-python/)
+b) will load into datawarehouse in OOP pattern
+c) Airflow for orchestration
+
+
+
+
+
