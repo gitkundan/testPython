@@ -117,6 +117,29 @@ b) will load into datawarehouse in OOP pattern
 c) Airflow for orchestration
 
 
+#openpyxl
+from openpyxl import load_workbook
+from openpyxl.workbook import Workbook
+from openpyxl.styles import Font, Fill
+import openpyxl
+file_path=r"C:\Users\John\Downloads\MOCK_DATA.xlsx"
+wb=load_workbook(file_path, read_only=False)
+ws=wb['data']
 
+wb.defined_names.delete('data5') #this range needs to be created beforehand
+new_range = openpyxl.workbook.defined_name.DefinedName('data5', attr_text='data!$a$1:$c$24') #snot needed as range will be dynamic with offset
+wb.defined_names.append(new_range)
+wb.save(file_path)
+wb.close()
+#=OFFSET(data!$A$1,0,0,COUNTA(data!$B:$B),6)
+# for sheet_title, sheet_coords in range.destinations:
+#     sheet = ws
+#     for row in sheet[sheet_coords]:
+#         x= "\t".join(str(cell.value) for cell in row)
+#         print(x)
+# new_range = openpyxl.workbook.defined_name.DefinedName('newrange', attr_text='Sheet!$A$1:$A$5')
+# wb.defined_names.append(new_range)
+
+=OFFSET('data'!$a$1,0,0,COUNTA('data'!$B:$B)-2,6)
 
 
