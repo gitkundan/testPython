@@ -143,3 +143,14 @@ wb.close()
 =OFFSET('data'!$a$1,0,0,COUNTA('data'!$B:$B)-2,6)
 
 
+#zip files
+import zipfile
+url=r'https://github.com/CoatiSoftware/Sourcetrail/releases/download/2021.4.19/Sourcetrail_2021_4_19_Windows_64bit_Portable.zip'
+# url=r'https://stackoverflow.com/questions/69651204/python-download-a-file-from-url'
+
+import requests
+with open ('sourcetrail.zip','wb') as file:
+    file.write(requests.get(url).content)
+
+with zipfile.ZipFile('sourcetrail.zip','r') as f:
+    f.extractall()
