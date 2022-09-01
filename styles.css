@@ -1,0 +1,105 @@
+.navbar {
+    background-color: black;
+    overflow: hidden;
+    margin: 0;
+    padding: 10px;
+    display: flex
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.subnav .subnavbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: gray;
+    width: 100%;
+    z-index: 1;
+}
+
+.subnav-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+}
+
+/* region : hovers */
+
+.subnav-content a:hover {
+    background-color: #eee;
+    color: black;
+}
+
+.subnav:hover .subnav-content {
+    display: block;
+}
+
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+    background-color: gray;
+}
+
+.subnav:hover {
+    display: block;
+}
+
+
+/* 
+.fa {
+    font-family: var(--fa-style-family, "Font Awesome 6 Free");
+    font-weight: var(--fa-style, 900); 
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+
+.fa-caret-down::before {
+    content: "\f0d7";
+} */
+
+
+.fa-caret-down::before {
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    font-family: Wingdings;
+    font-feature-settings: normal;
+    font-kerning: auto;
+    font-language-override: normal;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-size-adjust: none;
+    font-stretch: 100%;
+    font-style: normal;
+    font-variant-alternates: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-variant-position: normal;
+    font-variation-settings: normal;
+    font-weight: 400;
+    line-height: 16px;
+    text-rendering: auto;    
+}
