@@ -1,0 +1,34 @@
+# https://youtu.be/Vj-iU-8_xLs
+#comparison with dataclass : dataclass does not do data validation
+
+
+
+import json
+from pydantic import BaseModel
+from typing import List,Dict,Any,Optional
+import subprocess
+
+class Book(BaseModel):
+    
+    title:str
+    subtitle:str
+    author:str
+    publisher:str
+    isbn_10:Optional[str]
+    isbn_13:Optional[str]
+    price:float
+
+def main()->None:
+    """Main function"""
+    
+    with open('./data.json') as file:
+        data = json.load(file)
+        books:List[Book]=[Book(**item) for item in data] #Constructor from json: **item is unpacking #books object created
+        print(data[0]['title']) #can't do this on pydantic object - this works on dict not on pydantic object
+        
+        print(books[0].title) #this works on pydantic object
+        
+
+if __name__=="__main__":
+    main()
+    
