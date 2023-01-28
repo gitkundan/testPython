@@ -1,0 +1,31 @@
+$ pyreverse -S statistics -o mmd
+pyreverse.bat -c PyreverseCommand -a1 -s1 -f ALL -o png  test.py
+part of pylint
+does not need graphviz if output to mmd
+
+
+$ pyreverse -S -o mmd "C:\Users\John\Downloads\[FreeCourseSite.com] Udemy - The Complete Python Course  Learn Python by Doing\jira\jira\client.py"
+
+(1) output to dot
+$ pyreverse -S "C:\Users\John\Downloads\[FreeCourseSite.com] Udemy - The Complete Python Course  Learn Python by Doing\jira\jira\client.py"
+
+(2) convert dot to pdf
+>dot -Tpdf classes.dot -o output.pdf
+
+
+more info
+https://gist.github.com/HarshaVardhanBabu/9a47db9e33cf06e9e1e917520bb54056
+https://www.redshiftzero.com/pyreverse-uml/
+
+
+_______________________________________________
+
+How to look inside a python class_object_file
+
+from objexplore import explore
+explore(df)
+
+https://stackoverflow.com/questions/1006169/how-do-i-look-inside-a-python-object
+Use click CLI
+
+_______________________________________________
