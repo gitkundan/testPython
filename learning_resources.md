@@ -46,3 +46,7 @@ https://libreddit.spike.codes/r/learnpython/top?t=day
 1. Code style : https://docs.python-guide.org/writing/style/#filtering-a-list
 2. Testing : https://www.robinlinacre.com/effective_testing/
 3. 
+
+## Javascript from Python
+1. Book : https://runestone.academy/ns/books/published/JS4Python/index.html?mode=browsing
+2. Transpiler : Skulpt (Basis of Anvil)
