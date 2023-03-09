@@ -154,3 +154,33 @@ with open ('sourcetrail.zip','wb') as file:
 
 with zipfile.ZipFile('sourcetrail.zip','r') as f:
     f.extractall()
+
+========================================================================================
+#Vectorized conditional if-then in pandas
+Source : Rob Mulla (https://youtu.be/SAFmrTnEHLg)
+	
+%%timeit
+df['reward']=df['hate_food'] #default option
+condition= ((df['pct_sleeping']>0.05) & (df['time_in_bed']>5)) | (df['age']>90)
+
+df.loc[condition,'reward']=df['favourite_food']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
