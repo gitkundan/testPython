@@ -1,0 +1,96 @@
+{
+  "files.autoSaveDelay": 10,
+  "files.hotExit": "off",
+  "update.mode": "none",
+  "update.enableWindowsBackgroundUpdates": false,
+  "update.showReleaseNotes": false,
+  "extensions.ignoreRecommendations": false,
+  "*.qvs": "Qlik",
+  "*.ipynb":"jupyter-notebook",
+  "editor.minimap.enabled": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "python.jediEnabled": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "python.languageServer": "Pylance",
+  "jupyter.alwaysTrustNotebooks": true,
+  "editor.renderWhitespace": "all",
+  "emmet.excludeLanguages": ["markdown"],
+  "terminal.integrated.allowChords": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "security.workspace.trust.untrustedFiles": "open",
+  "telemetry.telemetryLevel": "off",
+  "python.formatting.provider": "black",
+  "explorer.confirmDelete": false,
+  "editor.formatOnType": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.codeActionsOnSave": {},
+  "workbench.enableExperiments": false,
+  "python.experiments.enabled": false,
+  "jupyter.experiments.enabled": false,
+  "notebook.editorOptionsCustomizations": {},
+  "python.analysis.autoImportCompletions": false,
+  "editor.guides.bracketPairs": true,
+  "editor.wordWrap": "bounded",
+  "livePreview.autoRefreshPreview": "On Changes to Saved Files",
+  "livePreview.tasks.browserPreviewLaunchServerLogging": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.stickyScroll.enabled": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.ignoreFiles": [
+    "**/*.md",
+    ".vscode/**",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.ts"
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.autoSave": "afterDelay",
+  "python.diagnostics.sourceMapsEnabled": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": false,
+  "vim.useCtrlKeys": false,
+  "vim.hlsearch": true,
+  "captainStack.settings.maxResults": 10,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.zoomLevel": 1,
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#FFD700",
+    "editorBracketHighlight.foreground2": "#DA70D6",
+    "editorBracketHighlight.foreground3": "#3617ff",
+    "terminal.ansiGreen": "#a43afa",
+    "terminal.background": "#0800014a",
+    "terminal.foreground": "#00ff77",
+    "notebook.outputContainerBackgroundColor": "#474742",
+    "notebook.cellEditorBackground": "#474782",
+    "notebook.focusedCellBorder": "#ff0000"
+  },
+  "python.defaultInterpreterPath": "C:\\Users\\John\\Downloads\\.venv\\Scripts\\python.exe",
+  "python.terminal.activateEnvironment": true,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "notebook.output.textLineLimit": 30000,
+  "notebook.experimental.outputScrolling": true,
+  "notebook.output.wordWrap": true,
+  "jupyter.allowUnauthorizedRemoteConnection": true,
+  "jupyter.enableExtendedKernelCompletions": true,
+  "window.commandCenter": true,
+  "notebook.lineNumbers": "on",
+}
