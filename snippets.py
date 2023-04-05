@@ -215,6 +215,15 @@ with tempfile.TemporaryDirectory() as tmpdirname:
 min(1,2,3)
 
 ========================================================================================
+sklearn
+
+#important that the dataset is split into features and response variables earlier
+# (Option A) : without validation set
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
+
+# (Option B) : with validation set perform extra step
+X_train, X_val, y_train, y_val=train_test_split(X_train,y_train,test_size=0.33,random_state=42)
 
 
 
@@ -222,13 +231,7 @@ min(1,2,3)
 
 
 
-
-
-
-
-
-
-
+=======================================================================================
 
 
 
