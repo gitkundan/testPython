@@ -87,6 +87,7 @@
   "python.terminal.activateEnvironment": true,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "notebook.output.textLineLimit": 30000,
+  "notebook.showCellStatusBar": "hidden",
   "notebook.experimental.outputScrolling": true,
   "notebook.output.wordWrap": true,
   "jupyter.allowUnauthorizedRemoteConnection": true,
