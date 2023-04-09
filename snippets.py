@@ -232,6 +232,54 @@ X_train, X_val, y_train, y_val=train_test_split(X_train,y_train,test_size=0.33,r
 
 
 =======================================================================================
+Matplotlib functional interface 
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Note the below methods are on plt but they are actually
+# methods on axes object not at figure level
+
+plt.figure(figsize=(6,4),dpi=100) # this is at figure level
+x=np.linspace(1,10,10)
+y=x**2
+z=x**3
+# plot the first line
+plt.plot(x,y,'--m',linewidth=2,label='line 1')
+
+# plot the second line on the same axis
+plt.plot(x,z,'^r',label='line 2')
+plt.xlabel('Sales')
+plt.ylabel('Profit')
+plt.title('Seals and Profit')
+plt.legend() #calling this will display the legend box in chart
+plt.grid(True)
+
+LINE STYLES
+- means solid line
+-- means dashed line
+: means dotted line
+-. means dash-dot line
+
+MARKERS
+. means point marker
+, means pixel marker
+o
+v
+^
+<
+>
+1...8 has different number based markers styles
+
+COLORS
+cmyk rgb
+
+To display legend : plt.legend()
+
+=======================================================================================
 
 
 
