@@ -280,6 +280,14 @@ cmyk rgb
 To display legend : plt.legend()
 
 =======================================================================================
+get all methods of an object 
+import inspect
+members = inspect.getmembers(df.index)
+methods = [m[0] for m in members if not m[0].startswith('_') and callable(m[1])]
+methods
+
+=======================================================================================
+
 
 
 
