@@ -1,4 +1,37 @@
+
 """
+Testing using pytest:
+https://realpython.com/pytest-python-testing/
+python -m pip install pytest
+
+main.py
+#actual function
+def filter_list(input_list: list) -> list:
+    output=[item for item in input_list if isinstance(item,int)]
+
+#test function
+# for every function at least one pass test case and one fail test case (100% coverage) starting with function name as test_
+def test_filter_list():
+    assert filter_list([1, 2, "a", "b"]) == [1, 2]
+    assert filter_list([1, "a", "b", 0, 15]) == [1, 0, 15]
+    assert filter_list([1, 2, "aasf", "1", "123", 123]) == [1, 2, 123]
+
+Terminal : pytest main.py
+
+assert condition from function == hardcoded result
+
+start testing functions with test_
+create tests at the root level of your project
+
+install coverage extension and then get coverage report at the root directory level :
+pip install pytest-cov
+pytest --cov=./root
+
+
+======================================================
+
+
+
 Read Later:
 https://youtu.be/CApCQKuWqBM (30 days python)
 Rest API (Caleb) https://youtu.be/qbLc5a9jdXo
