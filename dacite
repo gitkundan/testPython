@@ -1,0 +1,42 @@
+#example to use dacite library
+
+import json
+from dataclasses import dataclass, field
+from typing import List, Dict, Any
+from dacite import from_dict
+
+@dataclass
+class Language:
+    name: str
+
+@dataclass
+class Repo:
+    name: str
+    languages: List[str] = field(default_factory=list)
+
+@dataclass
+class User:
+    username: str
+    repos: List[Repo] = field(default_factory=list)
+
+### Step 2: Instantiate Dataclasses from JSON
+
+# Parse the JSON string
+json_str = '''
+{
+ "username": "example_user",
+ "repos": [
+    {
+      "name": "repo1",
+      "languages": ["Python", "JavaScript"]
+    },
+    {
+      "name": "repo2",
+      "languages": ["Java"]
+    }
+ ]
+}
+'''
+data = json.loads(json_str)
+user=from_dict(data_class=User,data=data)
+print(user)
