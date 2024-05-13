@@ -1,40 +1,57 @@
-import unittest
+To model the given scenario in a Qlik Sense data model, we can create a star schema with a fact table and three dimension tables. Here's how you can approach it:
 
-def solution(A):
-    # Convert the list to a set for faster lookup
-    seen = set(A)
-    
-    # Iterate from 1 to len(A)
-    for i in range(1, len(A) + 1):
-        # If i is not in the set, it means it's not in A, so return it
-        if i not in seen:
-            return i
-    
-    # If we reached the end of the loop without finding a number not in A, return len(A) + 1
-    return len(A) + 1
+Fact Table: ServerClusterComponent
 
+This table will contain the numerical measures or metrics related to the servers, clusters, and components.
+Possible fields: ServerID, ClusterID, ComponentID, Metric1, Metric2, etc.
+Dimension Table: Servers
 
-class TestFrogJump(unittest.TestCase):
-    def test_example1(self):
-        self.assertEqual(solution([1, 3, 6, 4, 1, 2]), 5)
+This table will contain information about the servers.
+Possible fields: ServerID (primary key), ServerName, ServerDescription, etc.
+Dimension Table: Clusters
 
-    def test_one(self):
-        self.assertEqual(solution([−1, −3]), 1)
+This table will contain information about the clusters.
+Possible fields: ClusterID (primary key), ClusterName, ClusterDescription, etc.
+Dimension Table: Components
 
+This table will contain information about the components (A, B, C).
+Possible fields: ComponentID (primary key), ComponentName, ComponentDescription, etc.
+To establish the relationships between these tables, you'll need to create associations in Qlik Sense:
 
+Association between ServerClusterComponent and Servers:
 
-if __name__ == "__main__":
-    unittest.main()
+Link the ServerID field in the ServerClusterComponent table to the ServerID field in the Servers table.
+Association between ServerClusterComponent and Clusters:
 
-    
-    
-# Method 	Equivalent to
-# .assertEqual(a, b) 	a == b
-# .assertTrue(x) 	bool(x) is True
-# .assertFalse(x) 	bool(x) is False
-# .assertIs(a, b) 	a is b
-# .assertIsNone(x) 	x is None
-# .assertIn(a, b) 	a in b
-# .assertIsInstance(a, b) 	isinstance(a, b)
+Link the ClusterID field in the ServerClusterComponent table to the ClusterID field in the Clusters table.
+Association between ServerClusterComponent and Components:
 
-# .assertIs(), .assertIsNone(), .assertIn(), and .assertIsInstance() all have opposite methods, named .assertIsNot(), and so forth.
+Link the ComponentID field in the ServerClusterComponent table to the ComponentID field in the Components table.
+With these associations, you can create a star schema data model in Qlik Sense, where the ServerClusterComponent table is the central fact table, and the Servers, Clusters, and Components tables are the dimension tables.
+
+Here's a visual representation of the data model:
+ServerClusterComponent (Fact Table)
+- ServerID
+- ClusterID
+- ComponentID
+- Metric1
+- Metric2
+- ...
+
+Servers (Dimension Table)
+- ServerID (Primary Key)
+- ServerName
+- ServerDescription
+- ...
+
+Clusters (Dimension Table)
+- ClusterID (Primary Key)
+- ClusterName
+- ClusterDescription
+- ...
+
+Components (Dimension Table)
+- ComponentID (Primary Key)
+- ComponentName
+- ComponentDescription
+- ...
