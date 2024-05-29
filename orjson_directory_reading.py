@@ -1,30 +1,36 @@
+import asyncio
+import aiofiles
 import orjson
 from pathlib import Path
 
-# Define the directory containing the .bin files
-data_dir = Path('C:/data')
+async def read_file_and_parse(bin_file):
+    async with aiofiles.open(bin_file, mode='rb') as f:
+        bin_data = await f.read()
+        
+        try:
+            json_data = orjson.loads(bin_data)
+            if isinstance(json_data, list):
+                return json_data
+            else:
+                print(f"File {bin_file} does not contain a list of dictionaries. Skipping.")
+                return None
+        except orjson.JSONDecodeError as e:
+            print(f"Error decoding JSON from file {bin_file}: {e}")
+            return None
 
-# Use pathlib to find all .bin files in the directory
-bin_files = data_dir.glob('*.bin')
+async def main():
+    data_dir = Path('C:/data')
+    bin_files = data_dir.glob('*.bin')
 
-# Initialize an empty master list to hold all dictionaries
-final = []
+    final = []
 
-# Iterate over each .bin file
-for bin_file in bin_files:
-    # Read the binary content of the file
-    with bin_file.open('rb') as f:
-        bin_data = f.read()
-    
-    # Convert the binary data to JSON
-    try:
-        json_data = orjson.loads(bin_data)
-        if isinstance(json_data, list):  # Ensure the data is a list
-            final.extend(json_data)  # Append dictionaries to the master list
-        else:
-            print(f"File {bin_file} does not contain a list of dictionaries. Skipping.")
-    except orjson.JSONDecodeError as e:
-        print(f"Error decoding JSON from file {bin_file}: {e}")
+    tasks = [read_file_and_parse(bin_file) for bin_file in bin_files]
+    results = await asyncio.gather(*tasks)
 
-# Now final contains all the dictionaries from all files
-print(f"Total dictionaries collected: {len(final)}")
+    for result in results:
+        if result is not None:
+            final.extend(result)
+
+    print(f"Total dictionaries collected: {len(final)}")
+
+asyncio.run(main())
